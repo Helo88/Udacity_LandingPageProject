@@ -104,8 +104,8 @@ console.log("ans",anchors)
     entries.forEach(entry => {
         if (entry.isIntersecting){
         console.log("this is iddd ",entry.target.id)
-
-       anchors.forEach(anchor=>{ /*highlight only active section nav a  */
+        document.getElementById(entry.target.id).classList.add("your-active-class")
+        anchors.forEach(anchor=>{ /*highlight only active section nav a  */
            if(anchor.id.split("_")[1]==entry.target.id)
            {
             anchor.classList.add("activeLink")
@@ -118,6 +118,10 @@ console.log("ans",anchors)
 
         
         }
+        else {
+          document.getElementById(entry.target.id).classList.remove("your-active-class")
+        }
+        
 
     });
   };
