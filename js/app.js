@@ -1,18 +1,20 @@
 
  /*global variables*/
 sections=document.querySelectorAll('section')
-main=document.querySelector('main')
+main=document.querySelector('.main__hero')
 collapseBtns=document.querySelectorAll('h2')
 console.log(collapseBtns)
 navbarList=document.querySelector('#navbar__list')
+/*  */
 navbarList.style.display="none"
+main.setAttribute("id","main")
 
 var isScrolling;
 /* scroll up btn*/
 scrollBtn=document.createElement("a")
 scrollBtn.style.textDecoration="none"
 scrollBtn.innerText="up"
-scrollBtn.style.display="block"
+scrollBtn.style.display="none"
 scrollBtn.style.width="30px"
 scrollBtn.style.height="30px"
 scrollBtn.style.textAlign="center"
@@ -23,7 +25,7 @@ scrollBtn.style.backgroundColor="yellow"
 scrollBtn.style.position="fixed"
 scrollBtn.style.left="20px"
 scrollBtn.style.bottom="200px"
-scrollBtn.setAttribute("href","#"+"section1")
+scrollBtn.setAttribute("href","#"+"main")
 scrollBtn.style.zIndex="1000"
 main.appendChild(scrollBtn)
 
