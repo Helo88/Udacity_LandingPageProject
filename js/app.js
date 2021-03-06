@@ -92,7 +92,7 @@ window.addEventListener('scroll', function ( event ) {
 
 }, false);
    
-  
+  /*intersctor observable part to detect which section is on viewport*/
 let options = {
     threshold: .7
   }
