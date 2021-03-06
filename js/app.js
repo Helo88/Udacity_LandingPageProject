@@ -1,12 +1,12 @@
 
  /*global variables*/
-sections=document.querySelectorAll('section')
-main=document.querySelector('.main__hero')
-collapseBtns=document.querySelectorAll('h2')
+const sections=document.querySelectorAll('section')
+const main=document.querySelector('.main__hero')
+const collapseBtns=document.querySelectorAll('h2')
 console.log(collapseBtns)
-navbarList=document.querySelector('#navbar__list')
+const navbarList=document.querySelector('#navbar__list')
 /*  */
-navbarList.style.display="none"
+navbarList.style.display="block"
 main.setAttribute("id","main")
 
 var isScrolling;
@@ -36,13 +36,15 @@ for(i=0 ;i<sections.length;i++)
 li=document.createElement("li")
 a=document.createElement("a")
 a.classList.add("menu__link")
-a.setAttribute("href","#"+sections[i].id);
+a.style.cursor="pointer"
+// a.setAttribute("href","#"+sections[i].id);
 a.setAttribute("id","nav_"+sections[i].id);
 console.log(a.href.split("#")[1])
 a.addEventListener("click",function fuv() {
     sections.forEach(element => { //nav to a specific section
-        if(element.id==this.href.split("#")[1])
+        if(element.id==this.id.split("_")[1])
         {
+        element.scrollIntoView({behavior: "smooth"})
         element.classList.add("your-active-class")}
          else{
           
@@ -97,7 +99,7 @@ let options = {
     threshold: .7
   }
   
-anchors=document.querySelectorAll('a')
+const anchors=document.querySelectorAll('a')
 console.log("ans",anchors)
 
   let callback = (entries, observer) => {
